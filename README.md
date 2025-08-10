@@ -6,17 +6,18 @@
 ---
 
 ## 📝 Descripción
-**Glitch** es un juego de plataformas 2D desarrollado en **Godot 4**, donde el protagonista, un "glitch", utiliza habilidades únicas de *glitcheo* para navegar por un mundo digital lleno de desafíos.  
-La aventura comienza en una zona natural y culmina en una cueva oscura llena de enemigos más fuertes, que resguardan la puerta del jefe final.
+**Glitch** es un juego de plataformas 2D desarrollado en **Godot 4**, protagonizado por un curioso "glitch" que utiliza habilidades únicas para atravesar un mundo digital lleno de retos.  
+La aventura inicia en una zona natural y avanza hasta llegar a una cueva oscura habitada por enemigos más poderosos.  
+En lo más profundo, se encuentra la puerta que custodia al jefe final.
 
 ---
 
-## ⚙️ Mecánicas de juego
+## ⚙️ Mecánicas principales
 - Movimiento fluido
 - Dash
-- Ataques
-- Sistema de vida (se reinicia al morir)
-- Sistema de puntos (se reinicia según los puntos obtenidos al entrar a la escena)
+- Ataques cuerpo a cuerpo y a distancia
+- Sistema de vida que se reinicia al morir
+- Sistema de puntuación que se ajusta según los puntos obtenidos al entrar a cada escena
 
 ---
 
@@ -34,69 +35,70 @@ La aventura comienza en una zona natural y culmina en una cueva oscura llena de 
 
 ---
 
-## 🖼️ Assets utilizados
+## 🖼️ Recursos visuales utilizados
 
 ### Sprites
-- **Dummy:** Hited(NoArmor)1 → Hited(NoArmor)5, Idle(NoArmor)
-- **Player:** player_1 → player_199
+- **Dummy:** Hited(NoArmor)1 a Hited(NoArmor)5, Idle(NoArmor)
+- **Player:** player_1 a player_199
 - **Enemigo:** NightBoerne
 - **Boss:** attack 1, attack 2, idle, walk, free Smoke Fx pixel
 - **Barras de vida:** Barradevidapersonal, Barradevidapersona2l, health_bar, health_bar_decoration
-- **Monedas:** red_crystal_0000 → red_crystal_0003
-- **Nivel:** BG_1, BG_2, BG_3, BG_3_alt, Free, Mockup, Terrain-and_Props-OLD, Terrain-and_Props, 0x72_16x16RobotTileset.v1, Fondo PNG, TileSet PNG
+- **Monedas:** red_crystal_0000 a red_crystal_0003
+- **Escenarios:** BG_1, BG_2, BG_3, BG_3_alt, Free, Mockup, Terrain-and_Props-OLD, Terrain-and_Props, 0x72_16x16RobotTileset.v1, Fondo PNG, TileSet PNG
 
 ---
 
-## 📜 Scripts utilizados
+## 📜 Scripts implementados
 
 ### 🎯 Boss.gd
-Controla al jefe final: detección de jugador, ataques con cooldown, sistema de vida y fases de furia.
+Controla el jefe final: detección del jugador, ataques con tiempo de recarga, sistema de vida y fases de furia cuando su salud es baja.
 
 ### 📊 Canvas_layer.gd
-Controla la barra de vida del boss, reacción al daño y efecto al ser derrotado.
+Gestiona la barra de vida del jefe: reacciona al daño y activa un efecto de desaparición al ser derrotado.
 
 ### 💰 coin.gd
-Gestiona monedas: detección de colisión, recolección y suma de puntos.
+Controla la recolección de monedas: al colisionar con el jugador, se suman puntos y la moneda desaparece.
 
 ### 🎯 dummy.gd
-Controla al dummy, reacciona a ataques mostrando animación de golpe.
+Controla al dummy de prueba: reacciona a los ataques del jugador mostrando animación de impacto.
 
 ### 👾 enemy.gd
-Controla enemigos: detección de jugador, persecución y ataques.
+Controla enemigos comunes: detectan al jugador, lo persiguen y atacan para reducir su vida.
 
 ### ❤️ HealthManager.gd
-Controla barra de vida del jugador, guarda y carga daño (con errores visuales).
+Gestiona la barra de vida del jugador: guarda y carga el daño recibido (presenta algunos errores visuales pendientes de corregir).
 
 ### 🏷️ hudpuntos.gd
-Muestra puntos obtenidos en pantalla en tiempo real.
+Actualiza en tiempo real la puntuación obtenida y la muestra en pantalla.
 
 ### 📊 Labelpuntos.gd
-Muestra puntos totales al final del juego.
+Muestra la puntuación total al finalizar el juego (al derrotar al jefe).
 
 ### 🖥️ menu.gd
-Controla el menú principal: nueva partida, cargar, salir.
+Controla el menú principal: iniciar nueva partida, cargar partida guardada o salir del juego.
 
 ### ⏸️ node.gd
-Controla el *popup* de pausa, deteniendo el juego.
+Controla la ventana emergente de pausa: detiene el juego mientras está activa.
 
 ### 🛑 pausa.gd
-Controla la pantalla de pausa: guardar partida, salir al menú o cerrar juego.
+Gestiona el menú de pausa: guardar partida, volver al menú principal o salir del juego.
 
 ### 🕹️ player.gd
-Controla al jugador: movimientos, ataques, dash, salto y personalización desde el inspector.
+Gestiona el control del jugador: movimientos, ataques, dash, saltos y configuración editable desde el inspector de Godot.
 
 ### 📈 PointSystem.gd
-Sistema de puntos por enemigos y monedas.
+Sistema de puntos: otorga puntuación por derrotar enemigos, recoger monedas y vencer al jefe.
 
 ### 💾 SaveSystem.gd
-Sistema de guardado: vida, puntos, posición, escena y carga de datos.
+Sistema de guardado: almacena vida, puntuación, posición, escena actual y permite cargar la partida.
 
 ---
 
 ## 💬 Comentarios finales
-La creación de las mecánicas y escenarios fue relativamente sencilla, pero conectar nodos, manejar puntos, efectos visuales y el sistema de guardado fue un desafío.  
-Tuve dificultades al guardar datos tras recolectar monedas o derrotar enemigos, pero disfruté mucho el proceso de desarrollo.  
-Es posible que en el futuro cree un juego personal o mejore este proyecto.  
-Para mi nivel actual de conocimiento, estoy satisfecho con el resultado.
+Crear las mecánicas y los escenarios resultó una experiencia fluida y entretenida.  
+Los mayores retos fueron conectar nodos, sincronizar el sistema de puntos, implementar algunos efectos visuales y configurar correctamente el sistema de guardado, especialmente al intentar registrar monedas recogidas o enemigos derrotados.  
+
+A pesar de esas dificultades, disfruté mucho el proceso y considero que el resultado es satisfactorio para mi nivel actual de conocimiento.  
+En el futuro, me gustaría mejorar este proyecto o desarrollar un juego completamente nuevo.
 
 ---
