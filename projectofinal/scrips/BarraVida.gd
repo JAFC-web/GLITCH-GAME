@@ -1,5 +1,4 @@
 # HealthManager.gd - Sistema singleton para mantener la vida entre escenas
-# Agregar este archivo como AutoLoad con el nombre "HealthManager"
 
 extends Node
 
