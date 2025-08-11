@@ -1,0 +1,72 @@
+[gd_scene load_steps=5 format=3 uid="uid://b826xf8m5ma1c"]
+
+[ext_resource type="PackedScene" uid="uid://cfw7vs8qn0q0d" path="res://menu/menutcj.tscn" id="1_2e40r"]
+[ext_resource type="Script" uid="uid://calkeulem2uqs" path="res://scrips/menu.gd" id="1_muw4x"]
+[ext_resource type="PackedScene" uid="uid://dyie328upq88q" path="res://menu/title.tscn" id="2_1fvg4"]
+[ext_resource type="AudioStream" uid="uid://onwng4ngcf7t" path="res://sonidos/Pony Island Soundtrack - Escape.mp3" id="3_1fvg4"]
+
+[node name="Menu" type="Control"]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_muw4x")
+
+[node name="Menutcj" parent="." instance=ExtResource("1_2e40r")]
+position = Vector2(576, 319.75)
+scale = Vector2(0.6, 0.49398)
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = -304.0
+offset_top = 136.0
+offset_right = 448.0
+offset_bottom = 1142.0
+rotation = -0.491249
+color = Color(0, 0, 0, 1)
+
+[node name="title" parent="." instance=ExtResource("2_1fvg4")]
+position = Vector2(264, 56)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 32.0
+offset_top = 200.0
+offset_right = 205.0
+offset_bottom = 353.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(2.77696, 2.60408)
+
+[node name="Npartida" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Nueva Partida"
+
+[node name="Cpartida" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+toggle_mode = true
+button_mask = 7
+keep_pressed_outside = true
+text = "Cargar Partida"
+
+[node name="Tuto" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Tutorial"
+
+[node name="salir" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Salir"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_1fvg4")
+volume_db = -15.0
+autoplay = true
+
+[connection signal="pressed" from="VBoxContainer/Npartida" to="." method="_on_npartida_pressed"]
+[connection signal="pressed" from="VBoxContainer/Cpartida" to="." method="_on_cpartida_pressed"]
+[connection signal="pressed" from="VBoxContainer/Tuto" to="." method="_on_tuto_pressed"]
+[connection signal="pressed" from="VBoxContainer/salir" to="." method="_on_salir_pressed"]

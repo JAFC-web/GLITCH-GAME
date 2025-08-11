@@ -1,0 +1,99 @@
+[gd_scene load_steps=9 format=3 uid="uid://ddrc4hrahydru"]
+
+[ext_resource type="Script" uid="uid://6hucfox2xnpn" path="res://scrips/node.gd" id="1_epypp"]
+[ext_resource type="PackedScene" uid="uid://dyie328upq88q" path="res://menu/title.tscn" id="2_0e48y"]
+[ext_resource type="PackedScene" uid="uid://cfw7vs8qn0q0d" path="res://menu/menutcj.tscn" id="2_0hol4"]
+[ext_resource type="AudioStream" uid="uid://ddnglu8xxiixr" path="res://sonidos/cancel-36118.mp3" id="3_epypp"]
+[ext_resource type="Script" uid="uid://bh8lkixfpguyb" path="res://scrips/pausa2.gd" id="5_q6r6c"]
+
+[sub_resource type="SystemFont" id="SystemFont_epypp"]
+font_names = PackedStringArray("Gill Sans")
+font_weight = 100
+font_stretch = 200
+subpixel_positioning = 0
+
+[sub_resource type="LabelSettings" id="LabelSettings_0hol4"]
+font = SubResource("SystemFont_epypp")
+font_size = 50
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_epypp"]
+
+[node name="pausa" type="CanvasLayer"]
+
+[node name="Node" type="Node2D" parent="."]
+script = ExtResource("1_epypp")
+
+[node name="Popup" type="Popup" parent="Node"]
+process_mode = 3
+size = Vector2i(1156, 650)
+visible = true
+
+[node name="Menutcj" parent="Node/Popup" instance=ExtResource("2_0hol4")]
+position = Vector2(234, 312)
+
+[node name="ColorRect" type="ColorRect" parent="Node/Popup"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -656.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.716296, 0.716296, 0.716296, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="Node/Popup"]
+offset_left = -150.0
+offset_top = 47.0
+offset_right = 923.0
+offset_bottom = 332.0
+rotation = -0.351001
+color = Color(0, 0, 0, 1)
+
+[node name="title" parent="Node/Popup" instance=ExtResource("2_0e48y")]
+position = Vector2(248, 32)
+scale = Vector2(0.572396, 0.604261)
+
+[node name="Label" type="Label" parent="Node/Popup"]
+offset_left = 160.0
+offset_top = 80.0
+offset_right = 378.0
+offset_bottom = 249.0
+text = "Pause
+"
+label_settings = SubResource("LabelSettings_0hol4")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Node/Popup"]
+process_mode = 3
+stream = ExtResource("3_epypp")
+
+[node name="Control" type="Control" parent="Node/Popup"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("5_q6r6c")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Node/Popup/Control"]
+layout_mode = 0
+offset_left = 50.0
+offset_top = 280.0
+offset_right = 247.0
+offset_bottom = 403.0
+scale = Vector2(2, 2)
+
+[node name="save" type="Button" parent="Node/Popup/Control/VBoxContainer"]
+clip_contents = true
+layout_mode = 2
+text = "Guardar Partida"
+icon = SubResource("ViewportTexture_epypp")
+
+[node name="salirM" type="Button" parent="Node/Popup/Control/VBoxContainer"]
+layout_mode = 2
+text = "Salir Al Menu"
+
+[node name="salirJ" type="Button" parent="Node/Popup/Control/VBoxContainer"]
+layout_mode = 2
+text = "Salir Del Juego"
+
+[connection signal="pressed" from="Node/Popup/Control/VBoxContainer/save" to="Node/Popup/Control" method="_on_save_pressed"]
+[connection signal="pressed" from="Node/Popup/Control/VBoxContainer/salirM" to="Node/Popup/Control" method="_on_salir_m_pressed"]
+[connection signal="pressed" from="Node/Popup/Control/VBoxContainer/salirJ" to="Node/Popup/Control" method="_on_salir_j_pressed"]

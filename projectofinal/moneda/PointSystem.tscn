@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://dnatf6ucrpulf"]
+
+[ext_resource type="Script" uid="uid://dt5q2fuslfjkw" path="res://scrips/PointSystem.gd" id="1_pqqu5"]
+
+[node name="Node" type="Node"]
+script = ExtResource("1_pqqu5")

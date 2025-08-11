@@ -1,0 +1,44 @@
+[gd_scene load_steps=12 format=3 uid="uid://cfw7vs8qn0q0d"]
+
+[ext_resource type="Texture2D" uid="uid://l1lefg2a10lh" path="res://menu/glitch_frame_0.png" id="1_qhoik"]
+[ext_resource type="Texture2D" uid="uid://bhrpdl714akwn" path="res://menu/glitch_frame_1.png" id="2_fthik"]
+[ext_resource type="Texture2D" uid="uid://ce2adqeuulcb7" path="res://menu/glitch_frame_2.png" id="3_p2iho"]
+[ext_resource type="Texture2D" uid="uid://bgp2a66y81s8m" path="res://menu/glitch_frame_3.png" id="4_wr26l"]
+[ext_resource type="Texture2D" uid="uid://gylo6vwyfpc5" path="res://menu/glitch_frame_4.png" id="5_3sbl5"]
+[ext_resource type="Texture2D" uid="uid://cjmgu4egvj0yd" path="res://menu/glitch_frame_5.png" id="6_wgt5r"]
+[ext_resource type="Texture2D" uid="uid://o8mgbeecle6w" path="res://menu/glitch_frame_6.png" id="7_j8t1n"]
+[ext_resource type="Texture2D" uid="uid://d1ahav6bbi8e7" path="res://menu/glitch_frame_7.png" id="8_00ucg"]
+
+[sub_resource type="Animation" id="Animation_ghnvy"]
+length = 0.7
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:texture")
+tracks/0/interp = 0
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [ExtResource("1_qhoik"), ExtResource("2_fthik"), ExtResource("3_p2iho"), ExtResource("4_wr26l"), ExtResource("5_3sbl5"), ExtResource("6_wgt5r"), ExtResource("7_j8t1n"), ExtResource("8_00ucg")]
+}
+
+[sub_resource type="Animation" id="Animation_qhoik"]
+resource_name = "glich"
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_wlj1v"]
+_data = {
+&"RESET": SubResource("Animation_ghnvy"),
+&"glich": SubResource("Animation_qhoik")
+}
+
+[node name="Menutcj" type="Sprite2D"]
+texture = ExtResource("1_qhoik")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_wlj1v")
+}
+autoplay = "RESET"

@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://ccwm0ll63w4ky"
+path="res://.godot/imported/The Hermit - Hyper Light Drifter OST.mp3-a5673587da56bf545e2c56747da1c07a.mp3str"
+
+[deps]
+
+source_file="res://sonidos/The Hermit - Hyper Light Drifter OST.mp3"
+dest_files=["res://.godot/imported/The Hermit - Hyper Light Drifter OST.mp3-a5673587da56bf545e2c56747da1c07a.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

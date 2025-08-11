@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://ki2hfefms75a"
+path="res://.godot/imported/Pony Island Soundtrack - Enter Pony.mp3-d411df779257c3e57345b9f452c488e3.mp3str"
+
+[deps]
+
+source_file="res://sonidos/Pony Island Soundtrack - Enter Pony.mp3"
+dest_files=["res://.godot/imported/Pony Island Soundtrack - Enter Pony.mp3-d411df779257c3e57345b9f452c488e3.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://b0ky473jtfrdw"
+path="res://.godot/imported/Hyper Light Drifter OST - The Hierophant.mp3-21da284767dcfb05a8770bd5f81552d3.mp3str"
+
+[deps]
+
+source_file="res://sonidos/Hyper Light Drifter OST - The Hierophant.mp3"
+dest_files=["res://.godot/imported/Hyper Light Drifter OST - The Hierophant.mp3-21da284767dcfb05a8770bd5f81552d3.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

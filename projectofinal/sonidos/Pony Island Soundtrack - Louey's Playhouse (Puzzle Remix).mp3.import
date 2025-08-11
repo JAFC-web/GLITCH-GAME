@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bsv6assmutsmx"
+path="res://.godot/imported/Pony Island Soundtrack - Louey's Playhouse (Puzzle Remix).mp3-d0568f915a64f9c241e7e125afdf4c22.mp3str"
+
+[deps]
+
+source_file="res://sonidos/Pony Island Soundtrack - Louey's Playhouse (Puzzle Remix).mp3"
+dest_files=["res://.godot/imported/Pony Island Soundtrack - Louey's Playhouse (Puzzle Remix).mp3-d0568f915a64f9c241e7e125afdf4c22.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

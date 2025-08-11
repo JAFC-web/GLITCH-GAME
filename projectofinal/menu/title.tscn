@@ -1,0 +1,58 @@
+[gd_scene load_steps=14 format=3 uid="uid://dyie328upq88q"]
+
+[ext_resource type="Texture2D" uid="uid://vo0qvx7ssdlr" path="res://menu/title_glitch_transparent_frame_0.png" id="1_jil77"]
+[ext_resource type="Texture2D" uid="uid://dqufai8puf41y" path="res://menu/transparent_title_glitch_1.png" id="2_16uvt"]
+[ext_resource type="Texture2D" uid="uid://dfdbbs1b2ctaf" path="res://menu/transparent_title_glitch_2.png" id="3_upcoo"]
+[ext_resource type="Texture2D" uid="uid://d1tdggd5rxfmy" path="res://menu/transparent_title_glitch_3.png" id="4_gjryj"]
+[ext_resource type="Texture2D" uid="uid://bwule3omyvhf" path="res://menu/transparent_title_glitch_4.png" id="5_3ranr"]
+[ext_resource type="Texture2D" uid="uid://cl7cpi7omyumt" path="res://menu/transparent_title_glitch_5.png" id="6_dno37"]
+[ext_resource type="Texture2D" uid="uid://c3inexqtj7nef" path="res://menu/transparent_title_glitch_6.png" id="7_7ueec"]
+[ext_resource type="Texture2D" uid="uid://cpbdlrnquovk5" path="res://menu/transparent_title_glitch_7.png" id="8_2mtoi"]
+[ext_resource type="Texture2D" uid="uid://din6hg45ewncy" path="res://menu/transparent_title_glitch_8.png" id="9_h4c81"]
+[ext_resource type="Texture2D" uid="uid://ca85xh7sqj6hx" path="res://menu/transparent_title_glitch_9.png" id="10_01k44"]
+
+[sub_resource type="Animation" id="Animation_oyroy"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("1_jil77")]
+}
+
+[sub_resource type="Animation" id="Animation_ynqpd"]
+resource_name = "title"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("1_jil77"), ExtResource("2_16uvt"), ExtResource("3_upcoo"), ExtResource("4_gjryj"), ExtResource("5_3ranr"), ExtResource("6_dno37"), ExtResource("7_7ueec"), ExtResource("8_2mtoi"), ExtResource("9_h4c81"), ExtResource("10_01k44")]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_h34e7"]
+_data = {
+&"RESET": SubResource("Animation_oyroy"),
+&"title": SubResource("Animation_ynqpd")
+}
+
+[node name="title" type="Sprite2D"]
+texture = ExtResource("1_jil77")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_h34e7")
+}
+autoplay = "title"

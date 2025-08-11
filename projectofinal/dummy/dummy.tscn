@@ -1,0 +1,94 @@
+[gd_scene load_steps=13 format=3 uid="uid://bmjsv734sc8xd"]
+
+[ext_resource type="Texture2D" uid="uid://csv1rx3efjo1j" path="res://dummy/NoArmor/Idle/Idle(NoArmor).png" id="1_0lhgj"]
+[ext_resource type="Script" uid="uid://ctdle572cegrf" path="res://scrips/dummy.gd" id="1_k6daa"]
+[ext_resource type="Texture2D" uid="uid://dgdfqrropuo5q" path="res://dummy/NoArmor/Hited/Hited(NoArmor)1.png" id="2_k6daa"]
+[ext_resource type="Texture2D" uid="uid://4wdkcxmo7aks" path="res://dummy/NoArmor/Hited/Hited(NoArmor)2.png" id="3_fxv83"]
+[ext_resource type="Texture2D" uid="uid://bm472dpy8rtos" path="res://dummy/NoArmor/Hited/Hited(NoArmor)3.png" id="4_y1c1b"]
+[ext_resource type="Texture2D" uid="uid://crwiq8qikjn1k" path="res://dummy/NoArmor/Hited/Hited(NoArmor)4.png" id="5_btqty"]
+[ext_resource type="Texture2D" uid="uid://cscl8trr7rf2y" path="res://dummy/NoArmor/Hited/Hited(NoArmor)5.png" id="6_vggro"]
+
+[sub_resource type="Animation" id="Animation_isd3i"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("dummyv1:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("1_0lhgj")]
+}
+
+[sub_resource type="Animation" id="Animation_qoydh"]
+resource_name = "hit"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("dummyv1:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("2_k6daa"), ExtResource("3_fxv83"), ExtResource("4_y1c1b"), ExtResource("5_btqty"), ExtResource("6_vggro")]
+}
+
+[sub_resource type="Animation" id="Animation_ot5h0"]
+resource_name = "idle"
+length = 0.2
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("dummyv1:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("1_0lhgj")]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_t6kge"]
+_data = {
+&"RESET": SubResource("Animation_isd3i"),
+&"hit": SubResource("Animation_qoydh"),
+&"idle": SubResource("Animation_ot5h0")
+}
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_qc7rx"]
+radius = 8.0
+height = 32.0
+
+[node name="dummy" type="Area2D"]
+collision_layer = 8
+collision_mask = 6
+script = ExtResource("1_k6daa")
+
+[node name="dummyv1" type="Sprite2D" parent="."]
+position = Vector2(-192, 8)
+texture = ExtResource("1_0lhgj")
+offset = Vector2(192, -8)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="dummyv1"]
+root_node = NodePath("../..")
+libraries = {
+&"": SubResource("AnimationLibrary_t6kge")
+}
+
+[node name="hitdummy" type="Sprite2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 8)
+shape = SubResource("CapsuleShape2D_qc7rx")
+debug_color = Color(0.967999, 0, 0.470685, 0.42)
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="animation_finished" from="dummyv1/AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

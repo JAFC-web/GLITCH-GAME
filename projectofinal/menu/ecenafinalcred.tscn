@@ -1,0 +1,187 @@
+[gd_scene load_steps=8 format=3 uid="uid://cjirmfox1ggbd"]
+
+[ext_resource type="PackedScene" uid="uid://dyie328upq88q" path="res://menu/title.tscn" id="2_2dtfk"]
+[ext_resource type="PackedScene" uid="uid://b1klbbgmgw1kq" path="res://moneda/hudpuntos.tscn" id="2_fvxwl"]
+[ext_resource type="AudioStream" uid="uid://ki2hfefms75a" path="res://sonidos/Pony Island Soundtrack - Enter Pony.mp3" id="3_ocxik"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_7fxgt"]
+font_size = 100
+
+[sub_resource type="Animation" id="Animation_2dtfk"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ColorRect3:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-603, -394)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("ColorRect4:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-260, 616)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("ColorRect2:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(504, -248)]
+}
+
+[sub_resource type="Animation" id="Animation_fvxwl"]
+resource_name = "menu"
+length = 5.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
+"update": 0,
+"values": []
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ColorRect3:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 2.36667, 5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(-603, -394), Vector2(-352, -584), Vector2(-603, -394)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("ColorRect4:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 2.55, 5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(-608, 240), Vector2(440, 952), Vector2(-608, 240)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("ColorRect2:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 2.36667, 3.26667),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(504, -248), Vector2(504, -248), Vector2(640, -352)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_7fxgt"]
+_data = {
+&"RESET": SubResource("Animation_2dtfk"),
+&"menu": SubResource("Animation_fvxwl")
+}
+
+[node name="Node" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 661.0
+color = Color(0, 0, 0, 1)
+
+[node name="ColorRect4" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = -260.0
+offset_top = 616.0
+offset_right = 1391.0
+offset_bottom = 978.0
+rotation = -0.732098
+color = Color(0.805099, 0.000511534, 0.805602, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = 504.0
+offset_top = -248.0
+offset_right = 1003.0
+offset_bottom = 792.0
+rotation = -0.83815
+color = Color(3.46541e-06, 0.88707, 0.895572, 1)
+
+[node name="ColorRect3" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = -603.0
+offset_top = -394.0
+offset_right = -278.0
+offset_bottom = 1694.0
+rotation = -0.83815
+color = Color(3.46541e-06, 0.88707, 0.895572, 1)
+
+[node name="Label4" type="Label" parent="."]
+layout_mode = 0
+offset_left = 136.0
+offset_top = 160.0
+offset_right = 1019.0
+offset_bottom = 297.0
+text = "Juego Completado"
+label_settings = SubResource("LabelSettings_7fxgt")
+
+[node name="title" parent="." instance=ExtResource("2_2dtfk")]
+position = Vector2(576, 56)
+
+[node name="Hudpuntos" parent="." instance=ExtResource("2_fvxwl")]
+process_mode = 3
+layout_mode = 1
+offset_left = 344.0
+offset_top = -16.0
+offset_right = 344.0
+offset_bottom = -16.0
+scale = Vector2(3, 3)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_7fxgt")
+}
+autoplay = "menu"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_ocxik")
+volume_db = -15.0
+autoplay = true

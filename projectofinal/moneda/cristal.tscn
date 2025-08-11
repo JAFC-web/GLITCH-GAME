@@ -1,0 +1,68 @@
+[gd_scene load_steps=11 format=3 uid="uid://b7fslfegynn06"]
+
+[ext_resource type="Script" uid="uid://cuuvk54fh2xyx" path="res://scrips/coin.gd" id="1_p6t4f"]
+[ext_resource type="Texture2D" uid="uid://cy38tlj77mb3q" path="res://moneda/red_crystal_0000.png" id="2_rhu6s"]
+[ext_resource type="Texture2D" uid="uid://bffgpugkm76xf" path="res://moneda/red_crystal_0001.png" id="3_uy0rg"]
+[ext_resource type="Texture2D" uid="uid://cpfyoft7rxr0l" path="res://moneda/red_crystal_0002.png" id="4_gaca2"]
+[ext_resource type="Texture2D" uid="uid://dmtwd4o5oxujg" path="res://moneda/red_crystal_0003.png" id="5_pbq4b"]
+[ext_resource type="AudioStream" uid="uid://c7k4m7lm7o8ld" path="res://sonidos/glass-shatter-3-100155.mp3" id="6_huh40"]
+
+[sub_resource type="Animation" id="Animation_hsy4b"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("2_rhu6s")]
+}
+
+[sub_resource type="Animation" id="Animation_4ttej"]
+resource_name = "coin"
+length = 0.5
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.133333, 0.266667, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("2_rhu6s"), ExtResource("3_uy0rg"), ExtResource("4_gaca2"), ExtResource("5_pbq4b")]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_5osly"]
+_data = {
+&"RESET": SubResource("Animation_hsy4b"),
+&"coin": SubResource("Animation_4ttej")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ufg13"]
+size = Vector2(26, 48)
+
+[node name="cristal" type="Area2D"]
+script = ExtResource("1_p6t4f")
+coin_value = null
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_rhu6s")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_5osly")
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1, 2)
+shape = SubResource("RectangleShape2D_ufg13")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_huh40")

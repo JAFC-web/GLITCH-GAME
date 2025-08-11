@@ -1,0 +1,31 @@
+[gd_scene load_steps=2 format=3 uid="uid://b1klbbgmgw1kq"]
+
+[ext_resource type="Script" uid="uid://b0fx7mbfm1243" path="res://scrips/hudpuntos.gd" id="1_afw4j"]
+
+[node name="Hudpuntos" type="Control"]
+layout_mode = 3
+anchor_top = 0.16
+anchor_right = 0.16
+anchor_bottom = 0.346
+offset_top = -103.68
+offset_right = -184.32
+offset_bottom = -224.208
+script = ExtResource("1_afw4j")
+
+[node name="puntos" type="Label" parent="."]
+layout_mode = 0
+offset_top = 120.0
+offset_right = 59.0
+offset_bottom = 143.0
+text = "Puntos:"
+horizontal_alignment = 1
+
+[node name="contador" type="Label" parent="."]
+layout_mode = 0
+offset_left = 64.0
+offset_top = 112.0
+offset_right = 101.0
+offset_bottom = 161.0
+text = "
+"
+horizontal_alignment = 1
