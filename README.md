@@ -71,16 +71,13 @@ Gestiona la barra de vida del jugador: guarda y carga el daño recibido (present
 ### 🏷️ hudpuntos.gd
 Actualiza en tiempo real la puntuación obtenida y la muestra en pantalla.
 
-### 📊 Labelpuntos.gd
-Muestra la puntuación total al finalizar el juego (al derrotar al jefe).
-
 ### 🖥️ menu.gd
 Controla el menú principal: iniciar nueva partida, cargar partida guardada o salir del juego.
 
 ### ⏸️ node.gd
 Controla la ventana emergente de pausa: detiene el juego mientras está activa.
 
-### 🛑 pausa.gd
+### 🛑 pausa2.gd
 Gestiona el menú de pausa: guardar partida, volver al menú principal o salir del juego.
 
 ### 🕹️ player.gd
