@@ -4,7 +4,10 @@
 **Glitch**
 
 ---
+##📁Descarga
 
+https://www.mediafire.com/file/itsuliri1mec7iw/GlitchFinal.zip/file?dkey=wwc5o61zc7g&r=1043
+---
 ## 📝 Descripción
 **Glitch** es un juego de plataformas 2D desarrollado en **Godot 4**, protagonizado por un curioso "glitch" que utiliza habilidades únicas para atravesar un mundo digital lleno de retos.  
 La aventura inicia en una zona natural y avanza hasta llegar a una cueva oscura habitada por enemigos más poderosos.  
