@@ -90,6 +90,19 @@ Sistema de puntos: otorga puntuación por derrotar enemigos, recoger monedas y v
 Sistema de guardado: almacena vida, puntuación, posición, escena actual y permite cargar la partida.
 
 ---
+### 📹Videosm Del Juego
+
+
+https://github.com/user-attachments/assets/57a5d0ca-81a5-4360-a4dc-5c24747733da
+
+
+
+https://github.com/user-attachments/assets/82b1b324-eabe-4b62-b742-f83291d7baed
+
+
+
+
+---
 
 ## 💬 Comentarios finales
 Crear las mecánicas y los escenarios resultó una experiencia fluida y entretenida.  
