@@ -115,11 +115,6 @@ func _restaurar_desde_checkpoint():
 	print("Vida restaurada desde checkpoint: ", vida_anterior, " -> ", vida_actual)
 	vida_restaurada.emit(vida_anterior, vida_actual)
 
-# FUNCIONES PÚBLICAS PARA MANIPULAR LA VIDA (SIN CURACIÓN)
-# func curar_jugador(cantidad: float):
-#	"""Función deshabilitada - No se permite curación"""
-#	print("Curación deshabilitada en este sistema")
-#	return 0.0
 
 func dañar_jugador(cantidad: float):
 	"""Daña al jugador una cantidad específica"""
@@ -200,15 +195,6 @@ func resetear_sistema():
 	escenas_visitadas.clear()
 	primera_escena = true
 	print("Sistema de vida reseteado completamente")
-
-# func resetear_vida_completa():
-#	"""Función deshabilitada - No se permite curación automática"""
-#	print("Curación automática deshabilitada")
-
-# FUNCIONES PARA OBJETOS DE CURACIÓN (DESHABILITADAS)
-# func crear_objeto_curacion(cantidad_curacion: float, posicion: Vector2):
-#	"""Función deshabilitada - No se permiten objetos de curación"""
-#	print("Objetos de curación deshabilitados en este sistema")
 
 # FUNCIONES DE DEBUG
 func debug_info():
