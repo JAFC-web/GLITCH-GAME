@@ -54,7 +54,7 @@ En lo más profundo, se encuentra la puerta que custodia al jefe final.
 ## 📜 Scripts implementados
 
 ### 🎯 Boss.gd
-Controla el jefe final: detección del jugador, ataques con tiempo de recarga, sistema de vida y fases de furia cuando su salud es baja.
+Controla el jefe final: detección del jugador, ataques con tiempo de recarga, sistema de vida y fases de furia cuando su salud es baja, este tambien cuenta con el sistema para que pueda resibir daño.
 
 ### 📊 Canvas_layer.gd
 Gestiona la barra de vida del jefe: reacciona al daño y activa un efecto de desaparición al ser derrotado.
@@ -66,7 +66,7 @@ Controla la recolección de monedas: al colisionar con el jugador, se suman punt
 Controla al dummy de prueba: reacciona a los ataques del jugador mostrando animación de impacto.
 
 ### 👾 enemy.gd
-Controla enemigos comunes: detectan al jugador, lo persiguen y atacan para reducir su vida.
+Controla enemigos comunes: detectan al jugador, lo persiguen y atacan para reducir la vida del jugador, este tambien cuenta con el sistema para que pueda resibir daño.
 
 ### ❤️ HealthManager.gd
 Gestiona la barra de vida del jugador: guarda y carga el daño recibido (presenta algunos errores visuales pendientes de corregir).
@@ -84,7 +84,7 @@ Controla la ventana emergente de pausa: detiene el juego mientras está activa.
 Gestiona el menú de pausa: guardar partida, volver al menú principal o salir del juego.
 
 ### 🕹️ player.gd
-Gestiona el control del jugador: movimientos, ataques, dash, saltos y configuración editable desde el inspector de Godot.
+Gestiona el control del jugador: movimientos, ataques, dash, saltos y configuración editable desde el inspector de Godot, cuenta con una parte para poder aportar al guardado, este tambien cuenta en el scrip con un sistema en la cual nos ayuda a modificar los valores del jugador y de los sonidos desde el inspector.
 
 ### 📈 PointSystem.gd
 Sistema de puntos: otorga puntuación por derrotar enemigos, recoger monedas y vencer al jefe.
@@ -110,10 +110,9 @@ https://github.com/user-attachments/assets/1970c15e-df61-4f13-9bac-514e53d74196
 ---
 
 ## 💬 Comentarios finales
-Crear las mecánicas y los escenarios resultó una experiencia fluida y entretenida.  
-Los mayores retos fueron conectar nodos, sincronizar el sistema de puntos, implementar algunos efectos visuales y configurar correctamente el sistema de guardado, especialmente al intentar registrar monedas recogidas o enemigos derrotados.  
-
-A pesar de esas dificultades, disfruté mucho el proceso y considero que el resultado es satisfactorio para mi nivel actual de conocimiento.  
-En el futuro, me gustaría mejorar este proyecto o desarrollar un juego completamente nuevo.
+Diseñar el juego y crear los diferentes niveles fue realmente divertido y todo fluyó bastante bien.
+Lo que más me costó trabajo fue hacer que todas las partes del juego se comunicaran entre sí correctamente. Por ejemplo, lograr que el sistema de puntuación funcionara bien, añadir algunos efectos visuales que se vieran bonitos, y sobre todo hacer que el juego guardara el progreso del jugador. Esto último fue especialmente complicado cuando quería que recordara cuántas monedas había recogido o qué enemigos había vencido.
+Aunque me topé con estos obstáculos, la verdad es que me la pasé muy bien desarrollándolo. Creo que para ser mi primer proyecto serio, el resultado quedó bastante decente y estoy contento con lo que logré.
+Me encantaría seguir mejorando este juego más adelante, o tal vez aventurarme a crear algo completamente nuevo desde cero.
 
 ---
