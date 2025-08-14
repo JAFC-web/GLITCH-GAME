@@ -1,4 +1,4 @@
-# 🎮 Glitch - GitHub Release v1.0
+# 🎮 Glitch - v1.0
 
 ## 📌 Nombre del proyecto
 **Glitch**
